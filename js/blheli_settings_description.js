@@ -1,7 +1,14 @@
 'use strict';
 
-// layout 33, 16.3, 16.4, 16.5
+// layout 33, 16.3, 16.4, 16.5 16.9
 var BLHELI_S_SETTINGS_LAYOUT_33 = [
+    {
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escPWMFrequency',
+        options: [
+            { value: '128', label: '24kHz' }, { value: '160', label: '48kHz' },
+            { value: '192', label: '96kHz' }
+        ]
+    },
     {
         name: 'PROGRAMMING_BY_TX', type: 'bool', label: 'escProgrammingByTX'
     },
