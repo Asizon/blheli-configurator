@@ -13,9 +13,9 @@
 
 
 variables:
-  owner: asizon
+  owner: Asizon
   repoName: blheli-configurator
-  debugReleaseNotes: This is a nightly build off the tip of 'master'. It may be unstable and result in corrupted configurations or data loss. **Use only for testing.**
+  debugReleaseNotes: This is a nightly build off the tip of 'jazzmaverick'. It may be unstable and result in corrupted configurations or data loss. **Use only for testing.**
   releaseNotes: This is a release build. It does not contain the debug console.
 
 parameters:
