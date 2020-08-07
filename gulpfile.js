@@ -239,11 +239,10 @@ gulp.task('apps', ['dist', 'clean-apps'], function (done) {
         files: './dist/**/*',
         buildDir: appsDir,
         platforms: platforms,
-        flavor: 'normal',
         macIcns: './images/icon_128.icns',
         macPlist: { 'CFBundleDisplayName': 'BLHeli Configurator'},
         winIco: './images/icon_128.ico',
-        version: '0.44.6'
+        version: '0.42.6'
     });
     builder.on('log', console.log);
     builder.build(function (err) {
@@ -270,7 +269,7 @@ gulp.task('debug', ['dist', 'clean-debug'], function (done) {
         macIcns: './images/icon_128.icns',
         macPlist: { 'CFBundleDisplayName': 'BLHeli Configurator'},
         winIco: './images/icon_128.ico',
-        version: '0.44.6'
+        version: '0.42.6'
     });
     builder.on('log', console.log);
     builder.build(function (err) {
