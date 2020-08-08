@@ -3,7 +3,11 @@ function fetchJSON(key, remoteURL, localURL) {
     return fetch(remoteURL)
     .then(response => {
         if (!response.ok) {
+            return fetch(remoteURL);
+
+            if (!response.ok) {
             throw new Error(response.statusText);
+            }
         }
 
         return response.json();
