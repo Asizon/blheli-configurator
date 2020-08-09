@@ -1,4 +1,4 @@
-var BLHELI_ESCS_REMOTE = 'https://raw.githubusercontent.com/blheli-configurator/blheli-configurator/master/js/blheli_escs.json';
+var BLHELI_ESCS_REMOTE = 'https://raw.githubusercontent.com/asizon/blheli-configurator/master/js/blheli_escs.json';
 var BLHELI_ESCS_LOCAL = './js/blheli_escs.json';
 var BLHELI_ESCS_KEY = 'escs';
 

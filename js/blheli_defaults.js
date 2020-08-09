@@ -7,7 +7,7 @@ var BLHELI_S_DEFAULTS = {
 		PROGRAMMING_BY_TX:          1,
 		COMMUTATION_TIMING:         3,
 		PPM_MIN_THROTTLE:           37,
-		PPM_MAX_THROTTLE:           208,
+		PPM_MAX_THROTTLE:           128,
 		BEEP_STRENGTH:              40,
 		BEACON_STRENGTH:            80,
 		BEACON_DELAY:               4,
@@ -34,5 +34,11 @@ var BLHELI_S_DEFAULTS = {
 		LOW_RPM_POWER_PROTECTION:   1,
 		BRAKE_ON_STOP:              0,
 		LED_CONTROL:                0
+	}
+};
+
+var BLHELI_S_PWM = {
+	'33': {
+		PPM_MAX_THROTTLE:           128
 	}
 };

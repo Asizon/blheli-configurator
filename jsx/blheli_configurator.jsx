@@ -164,6 +164,11 @@ var Configurator = React.createClass({
             await this.writeSetupImpl(esc);
         }
     },
+    writeSetupOne: async function() {
+        for (var esc = 0; esc < this.state.escSettings.length; ++esc) {
+            await this.writeSetupImpl(esc);
+        }
+    },
     writeSetupImpl: async function(esc) {
         try {
             if (!this.state.escMetainfo[esc].available) {
@@ -267,6 +272,29 @@ var Configurator = React.createClass({
 
         $('a.connect').removeClass('disabled');
     },
+    writeSetupToOne: async function() {
+        GUI.log(chrome.i18n.getMessage('writeSetupStarted'));
+        $('a.connect').addClass('disabled');
+
+        // disallow further requests until we're finished
+        // @todo also disable settings alteration
+        this.setState({
+            canRead: false,
+            canWrite: false,
+            canFlash: false
+        });
+
+        try {
+            await this.writeSetupOne();
+            GUI.log(chrome.i18n.getMessage('writeSetupFinished'));
+        } catch (error) {
+            GUI.log(chrome.i18n.getMessage('writeSetupFailed', [ error.stack ]));
+        }
+
+        await this.readSetup();
+
+        $('a.connect').removeClass('disabled');
+    },
     resetDefaults: function() {
         var newSettings = [];
 
@@ -295,13 +323,41 @@ var Configurator = React.createClass({
         this.writeSetup()
         .catch(error => console.log("Unexpected error while writing default setup", error))
     },
+    resetPWMFrecuency: function() {
+        var newSettings = [];
+
+        this.state.escSettings.forEach((settings, index) => {
+            if (!this.state.escMetainfo[index].available) {
+                newSettings.push({})
+                return;
+            }
+
+            const defaultsPWM = BLHELI_S_PWM[settings.LAYOUT_REVISION];
+            if (defaultsPWM) {
+                for (var settingName in defaultsPWM) {
+                    if (defaultsPWM.hasOwnProperty(settingName)) {
+                        settings[settingName] = defaultsPWM[settingName];
+                    }
+                }
+            }
+
+            newSettings.push(settings);
+        })
+
+        this.setState({
+            escSettings: newSettings
+        });
+
+        this.writeSetupToOne()
+        .catch(error => console.log("Unexpected error while writing default setup", error))
+    },
     flashOne: async function(escIndex) {
         this.setState({
             selectingFirmware: true,
             escsToFlash: [ escIndex ]
         });
     },
-    flashFirmwareImpl: async function(escIndex, escSettings, escMetainfo, flashImage, eepromImage, notifyProgress) {
+    flashFirmwareImpl: async function(escIndex, escSettings, escMetainfo, flashImage, eepromImage, notifyProgress, resetPWMFrecuency) {
         var isAtmel = [ _4way_modes.AtmBLB, _4way_modes.AtmSK ].includes(escMetainfo.interfaceMode),
             self = this;
 
@@ -343,6 +399,7 @@ var Configurator = React.createClass({
             try {
                 await self.writeSetupImpl(escIndex);
                 GUI.log(chrome.i18n.getMessage('writeSetupFinished'));
+                this.resetPWMFrecuency();
             } catch (error) {
                 GUI.log(chrome.i18n.getMessage('writeSetupFailed', [ error.message ]));
             }

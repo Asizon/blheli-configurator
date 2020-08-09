@@ -574,17 +574,11 @@ var BLHELI_S_INDIVIDUAL_SETTINGS = [
         ]
     },
     {
-        name: 'PPM_MIN_THROTTLE', type: 'number', min: 1000, max: 1500, step: 4, label: 'escPPMMinThrottle',
-        offset: 1000, factor: 4, suffix: ' μs'
-    },
-    {
-        name: 'PPM_MAX_THROTTLE', type: 'number', min: 1504, max: 2020, step: 4, label: 'escPPMMaxThrottle',
-        offset: 1000, factor: 4, suffix: ' μs'
-    },
-    {
-        name: 'PPM_CENTER_THROTTLE', type: 'number', min: 1000, max: 2020, step: 4, label: 'escPPMCenterThrottle',
-        offset: 1000, factor: 4, suffix: ' μs',
-        visibleIf: settings => [ 3, 4 ].includes(settings.MOTOR_DIRECTION)
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escAsyncPWMFrequency',
+        options: [
+            { value: '128', label: '24kHz' }, { value: '160', label: '48kHz' },
+            { value: '192', label: '96kHz' }
+        ]
     }
 ];
 

@@ -242,6 +242,7 @@ gulp.task('apps', ['dist', 'clean-apps'], function (done) {
         macIcns: './images/icon_128.icns',
         macPlist: { 'CFBundleDisplayName': 'BLHeli Configurator'},
         winIco: './images/icon_128.ico',
+        flavor: 'normal',
         version: '0.42.6'
     });
     builder.on('log', console.log);
