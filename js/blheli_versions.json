@@ -3,7 +3,7 @@
 		{
 			"name": "16.9 [No Official]",
 			"url": "https://raw.githubusercontent.com/JazzMaverick/BLHeli/0918a9db0d5b13892b0ae91a8b7adf54219de61c/BLHeli_S SiLabs/Hex_files_16.9/BB2_H/{0}_REV16_9.HEX",
-			"url": "https://raw.githubusercontent.com/JazzMaverick/BLHeli/0918a9db0d5b13892b0ae91a8b7adf54219de61c/BLHeli_S SiLabs/Hex_files_16.9/BB1_L/{0}_REV16_9.HEX",
+			"url2": "https://raw.githubusercontent.com/JazzMaverick/BLHeli/0918a9db0d5b13892b0ae91a8b7adf54219de61c/BLHeli_S SiLabs/Hex_files_16.9/BB1_L/{0}_REV16_9.HEX",
 			"key": "16.9"
 		},
 		{
