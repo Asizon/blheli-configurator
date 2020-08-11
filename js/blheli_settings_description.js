@@ -660,9 +660,6 @@ var BLHELI_INDIVIDUAL_SETTINGS = [
         name: 'PPM_CENTER_THROTTLE', type: 'number', min: 1000, max: 2020, step: 4, label: 'escPPMCenterThrottle',
         offset: 1000, factor: 4, suffix: ' μs',
         visibleIf: settings => settings.MOTOR_DIRECTION === 3
-    },
-        name: 'PPM_MAX_THROTTLE', type: 'number', min: 1504, max: 2020, step: 4, label: 'escPPMMaxThrottle',
-        offset: 1000, factor: 4, suffix: ' μs'
     }
 ];
 
