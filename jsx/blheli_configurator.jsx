@@ -362,8 +362,8 @@ var Configurator = React.createClass({
             var allSettings = self.state.escSettings.slice();
             allSettings[escIndex] = newSettings;
             self.onUserInput(allSettings);
-			this.resetPWMFrecuency(escIndex);
 
+            this.resetPWMFrecuency(escIndex);
             GUI.log(chrome.i18n.getMessage('writeSetupStarted'));
 
             try {

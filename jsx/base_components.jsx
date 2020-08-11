@@ -31,7 +31,6 @@ var Select = React.createClass({
                         value={this.props.notInSync ? -1 : this.props.value}
                         onChange={this.handleChange}
                     >
-                        <option className="hidden" disabled selected value="-1" />
                         {
                             this.props.options.map(option => <option value={option.value}>{option.label}</option>)
                         }
