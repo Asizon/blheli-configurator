@@ -163,8 +163,14 @@
     "escPPMCenterThrottle": {
         "message": "PPM Center Throttle"
     },
-    "escAsyncPWMFrequency": {
-        "message": "Async-PWM Frecuency"
+    "escAsync24khzPWMFrequency": {
+        "message": "24kHz Frecuency Options"
+    },
+    "escAsync48khzPWMFrequency": {
+        "message": "48kHz Frecuency Options"
+    },
+    "escAsync96khzPWMFrequency": {
+        "message": "96kHz Frecuency Options"
     },
     "escProgrammingByTX": {
         "message": "Programming by TX"
