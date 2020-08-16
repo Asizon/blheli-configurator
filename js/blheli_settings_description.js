@@ -3,58 +3,76 @@
 // layout 33, 16.3, 16.4, 16.5 16.9
 var BLHELI_S_SETTINGS_LAYOUT_33 = [
     {
-        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escAsyncPWMFrequency',
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escPWMFrequency',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 127 && settings.PPM_MAX_THROTTLE < 160),
         options: [
-            { value: '', label: 'OFF' }, { value: '128', label: '24kHz' }, { value: '160', label: '48kHz' }, { value: '192', label: '96kHz' }
+            { value: '', label: '24kHz' }, { value: '160', label: '48kHz' }, { value: '192', label: '96kHz' }
         ]
     },
     {
-        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escSync24khzPWMFrequency',
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escPWMFrequency',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 159 && settings.PPM_MAX_THROTTLE < 192),
         options: [
-            { value: '', label: 'OFF' }, { value: '129', label: '3%CE' }, { value: '130', label: '6%CE' }, { value: '131', label: '9%CE' },
-            { value: '132', label: '12%CE' }, { value: '133', label: '15%CE' }, { value: '134', label: '18%CE' }, { value: '135', label: '21%CE' },, { value: '136', label: '24%CE' },
-            { value: '137', label: '27%CE' }, { value: '138', label: '30%CE' }, { value: '139', label: '33%CE' }, { value: '140', label: '37%CE' },, { value: '141', label: '40%CE' },
-            { value: '142', label: '44%CE' }, { value: '143', label: '47%CE' }, { value: '144', label: '50%CE' }, { value: '145', label: '53%CE' },, { value: '146', label: '56%CE' },
-            { value: '147', label: '59%CE' }, { value: '148', label: '62%CE' }, { value: '149', label: '65%CE' }, { value: '150', label: '68%CE' },, { value: '151', label: '71%CE' },
-            { value: '152', label: '74%CE' }, { value: '153', label: '77%CE' }, { value: '154', label: '80%CE' }, { value: '155', label: '83%CE' },, { value: '156', label: '86%CE' },
+            { value: '', label: '48kHz' }, { value: '128', label: '24kHz' }, { value: '192', label: '96kHz' }
+        ]
+    },
+    {
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escPWMFrequency',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 191 && settings.PPM_MAX_THROTTLE < 224),
+        options: [
+            { value: '', label: '96kHz' }, { value: '128', label: '24kHz' }, { value: '160', label: '48kHz' }
+        ]
+    },
+    {
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escCe',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 127 && settings.PPM_MAX_THROTTLE < 160),
+        options: [
+            { value: '128', label: 'Async-PWM' }, { value: '129', label: '3%CE' }, { value: '130', label: '6%CE' }, { value: '131', label: '9%CE' },
+            { value: '132', label: '12%CE' }, { value: '133', label: '15%CE' }, { value: '134', label: '18%CE' }, { value: '135', label: '21%CE' }, { value: '136', label: '24%CE' },
+            { value: '137', label: '27%CE' }, { value: '138', label: '30%CE' }, { value: '139', label: '33%CE' }, { value: '140', label: '37%CE' }, { value: '141', label: '40%CE' },
+            { value: '142', label: '44%CE' }, { value: '143', label: '47%CE' }, { value: '144', label: '50%CE' }, { value: '145', label: '53%CE' }, { value: '146', label: '56%CE' },
+            { value: '147', label: '59%CE' }, { value: '148', label: '62%CE' }, { value: '149', label: '65%CE' }, { value: '150', label: '68%CE' }, { value: '151', label: '71%CE' },
+            { value: '152', label: '74%CE' }, { value: '153', label: '77%CE' }, { value: '154', label: '80%CE' }, { value: '155', label: '83%CE' }, { value: '156', label: '86%CE' },
             { value: '157', label: '90%CE' }, { value: '158', label: '95%CE' }, { value: '159', label: '100%CE' }
         ]
     },
     {
-        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escSync48khzPWMFrequency',
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escCe',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 159 && settings.PPM_MAX_THROTTLE < 192),
         options: [
-            { value: '', label: 'OFF' }, { value: '161', label: '3%CE' }, { value: '162', label: '6%CE' }, { value: '163', label: '9%CE' },
-            { value: '164', label: '12%CE' }, { value: '165', label: '15%CE' }, { value: '166', label: '18%CE' }, { value: '167', label: '21%CE' },, { value: '168', label: '24%CE' },
-            { value: '169', label: '27%CE' }, { value: '170', label: '30%CE' }, { value: '171', label: '33%CE' }, { value: '172', label: '37%CE' },, { value: '173', label: '40%CE' },
-            { value: '174', label: '44%CE' }, { value: '175', label: '47%CE' }, { value: '176', label: '50%CE' }, { value: '177', label: '53%CE' },, { value: '178', label: '56%CE' },
-            { value: '179', label: '59%CE' }, { value: '180', label: '62%CE' }, { value: '181', label: '65%CE' }, { value: '182', label: '68%CE' },, { value: '183', label: '71%CE' },
-            { value: '184', label: '74%CE' }, { value: '185', label: '77%CE' }, { value: '186', label: '80%CE' }, { value: '187', label: '83%CE' },, { value: '188', label: '86%CE' },
+            { value: '160', label: 'Async-PWM' }, { value: '161', label: '3%CE' }, { value: '162', label: '6%CE' }, { value: '163', label: '9%CE' },
+            { value: '164', label: '12%CE' }, { value: '165', label: '15%CE' }, { value: '166', label: '18%CE' }, { value: '167', label: '21%CE' }, { value: '168', label: '24%CE' },
+            { value: '169', label: '27%CE' }, { value: '170', label: '30%CE' }, { value: '171', label: '33%CE' }, { value: '172', label: '37%CE' }, { value: '173', label: '40%CE' },
+            { value: '174', label: '44%CE' }, { value: '175', label: '47%CE' }, { value: '176', label: '50%CE' }, { value: '177', label: '53%CE' }, { value: '178', label: '56%CE' },
+            { value: '179', label: '59%CE' }, { value: '180', label: '62%CE' }, { value: '181', label: '65%CE' }, { value: '182', label: '68%CE' }, { value: '183', label: '71%CE' },
+            { value: '184', label: '74%CE' }, { value: '185', label: '77%CE' }, { value: '186', label: '80%CE' }, { value: '187', label: '83%CE' }, { value: '188', label: '86%CE' },
             { value: '189', label: '90%CE' }, { value: '190', label: '95%CE' }, { value: '191', label: '100%CE' }
         ]
     },
     {
-        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escSync96khzPWMFrequency',
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escCe',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 191 && settings.PPM_MAX_THROTTLE < 224),
         options: [
-            { value: '', label: 'OFF' }, { value: '193', label: '3%CE' }, { value: '194', label: '6%CE' }, { value: '195', label: '9%CE' },
-            { value: '196', label: '12%CE' }, { value: '197', label: '15%CE' }, { value: '198', label: '18%CE' }, { value: '199', label: '21%CE' },, { value: '200', label: '24%CE' },
-            { value: '201', label: '27%CE' }, { value: '202', label: '30%CE' }, { value: '203', label: '33%CE' }, { value: '204', label: '37%CE' },, { value: '205', label: '40%CE' },
-            { value: '206', label: '44%CE' }, { value: '207', label: '47%CE' }, { value: '208', label: '50%CE' }, { value: '209', label: '53%CE' },, { value: '210', label: '56%CE' },
-            { value: '211', label: '59%CE' }, { value: '212', label: '62%CE' }, { value: '213', label: '65%CE' }, { value: '214', label: '68%CE' },, { value: '215', label: '71%CE' },
-            { value: '216', label: '74%CE' }, { value: '217', label: '77%CE' }, { value: '218', label: '80%CE' }, { value: '219', label: '83%CE' },, { value: '220', label: '86%CE' },
+            { value: '192', label: 'Async-PWM' }, { value: '193', label: '3%CE' }, { value: '194', label: '6%CE' }, { value: '195', label: '9%CE' },
+            { value: '196', label: '12%CE' }, { value: '197', label: '15%CE' }, { value: '198', label: '18%CE' }, { value: '199', label: '21%CE' }, { value: '200', label: '24%CE' },
+            { value: '201', label: '27%CE' }, { value: '202', label: '30%CE' }, { value: '203', label: '33%CE' }, { value: '204', label: '37%CE' }, { value: '205', label: '40%CE' },
+            { value: '206', label: '44%CE' }, { value: '207', label: '47%CE' }, { value: '208', label: '50%CE' }, { value: '209', label: '53%CE' }, { value: '210', label: '56%CE' },
+            { value: '211', label: '59%CE' }, { value: '212', label: '62%CE' }, { value: '213', label: '65%CE' }, { value: '214', label: '68%CE' }, { value: '215', label: '71%CE' },
+            { value: '216', label: '74%CE' }, { value: '217', label: '77%CE' }, { value: '218', label: '80%CE' }, { value: '219', label: '83%CE' }, { value: '220', label: '86%CE' },
             { value: '221', label: '90%CE' }, { value: '222', label: '95%CE' }, { value: '223', label: '100%CE' }
         ]
     },
     {
         name: 'PPM_MIN_THROTTLE', type: 'enum', label: 'escSyncEscFFBrake',
         options: [
-            { value: '37', label: 'OFF' }, { value: '20', label: 'Low/Normal-Brake(25%)' }, { value: '21', label: 'Low/Normal-Brake(50%)' }, { value: '22', label: 'Low/Normal-Brake(75%)' },
-            { value: '23', label: 'Low/Normal-Brake(100%)' }, { value: '24', label: 'Low/Double-Brake(25%)' }, { value: '25', label: 'Low/Double-Brake(50%)' }, { value: '26', label: 'Low/Double-Brake(75%)' },
-            { value: '27', label: 'Low/Double-Brake(100%)' }, { value: '30', label: 'Medium/Normal-Brake(25%)' }, { value: '31', label: 'Medium/Normal-Brake(50%)' }, { value: '32', label: 'Medium/Normal-Brake(75%)' },
-            { value: '33', label: 'Medium/Normal-Brake(100%)' }, { value: '34', label: 'Medium/Double-Brake(50%)' }, { value: '35', label: 'Medium/Double-Brake(75%)' }, { value: '36', label: 'Medium/Double-Brake(100%)' },
-            { value: '40', label: 'Medium-High/Normal-Brake(25%)' }, { value: '41', label: 'Medium-High/Normal-Brake(50%)' }, { value: '42', label: 'Medium-High/Normal-Brake(75%)' }, { value: '43', label: 'Medium-High/Normal-Brake(100%)' },
-            { value: '44', label: 'Medium-High/Double-Brake(25%)' }, { value: '45', label: 'Medium-High/Double-Brake(50%)' }, { value: '46', label: 'Medium-High/Double-Brake(75%)' }, { value: '47', label: 'Medium-High/Double-Brake(100%)' },
-            { value: '50', label: 'High/Normal-Brake(25%)' }, { value: '51', label: 'High/Normal-Brake(50%)' }, { value: '52', label: 'High/Normal-Brake(75%)' }, { value: '53', label: 'High/Normal-Brake(100%)' },
-            { value: '54', label: 'High/Double-Brake(25%)' }, { value: '55', label: 'High/Double-Brake(50%)' }, { value: '56', label: 'High/Double-Brake(75%)' }, { value: '57', label: 'High/Double-Brake(100%)' }
+            { value: '37', label: 'OFF' }, { value: '20', label: 'Low/Normal(25%)' }, { value: '21', label: 'Low/Normal(50%)' }, { value: '22', label: 'Low/Normal(75%)' },
+            { value: '23', label: 'Low/Normal(100%)' }, { value: '24', label: 'Low/Double(25%)' }, { value: '25', label: 'Low/Double(50%)' }, { value: '26', label: 'Low/Double(75%)' },
+            { value: '27', label: 'Low/Double(100%)' }, { value: '30', label: 'Medium/Normal(25%)' }, { value: '31', label: 'Medium/Normal(50%)' }, { value: '32', label: 'Medium/Normal(75%)' },
+            { value: '33', label: 'Medium/Normal(100%)' }, { value: '34', label: 'Medium/Double(25%)' }, { value: '35', label: 'Medium/Double(50%)' }, { value: '36', label: 'Medium/Double(75%)' },
+            { value: '40', label: 'Medium-High/Normal(25%)' }, { value: '41', label: 'Medium-High/Normal(50%)' }, { value: '42', label: 'Medium-High/Normal(75%)' }, { value: '43', label: 'Medium-High/Normal(100%)' },
+            { value: '44', label: 'Medium-High/Double(25%)' }, { value: '45', label: 'Medium-High/Double(50%)' }, { value: '46', label: 'Medium-High/Double(75%)' }, { value: '47', label: 'Medium-High/Double(100%)' },
+            { value: '50', label: 'High/Normal(25%)' }, { value: '51', label: 'High/Normal(50%)' }, { value: '52', label: 'High/Normal(75%)' }, { value: '53', label: 'High/Normal(100%)' },
+            { value: '54', label: 'High/Double(25%)' }, { value: '55', label: 'High/Double(50%)' }, { value: '56', label: 'High/Double(75%)' }, { value: '57', label: 'High/Double(100%)' }
         ]
     },
     {
@@ -622,39 +640,57 @@ var BLHELI_S_INDIVIDUAL_SETTINGS = [
         ]
     },
     {
-        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escAsyncPWMFrequency',
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escPWMFrequency',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 127 && settings.PPM_MAX_THROTTLE < 160),
         options: [
-            { value: '', label: 'OFF' }, { value: '128', label: '24kHz' }, { value: '160', label: '48kHz' }, { value: '192', label: '96kHz' }
+            { value: '', label: '24kHz' }, { value: '160', label: '48kHz' }, { value: '192', label: '96kHz' }
         ]
     },
     {
-        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escSync24khzPWMFrequency',
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escPWMFrequency',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 159 && settings.PPM_MAX_THROTTLE < 192),
         options: [
-            { value: '', label: 'OFF' }, { value: '129', label: '3%CE' }, { value: '130', label: '6%CE' }, { value: '131', label: '9%CE' },
-            { value: '132', label: '12%CE' }, { value: '133', label: '15%CE' }, { value: '134', label: '18%CE' }, { value: '135', label: '21%CE' },, { value: '136', label: '24%CE' },
-            { value: '137', label: '27%CE' }, { value: '138', label: '30%CE' }, { value: '139', label: '33%CE' }, { value: '140', label: '37%CE' },, { value: '141', label: '40%CE' },
-            { value: '142', label: '44%CE' }, { value: '143', label: '47%CE' }, { value: '144', label: '50%CE' }, { value: '145', label: '53%CE' },, { value: '146', label: '56%CE' },
-            { value: '147', label: '59%CE' }, { value: '148', label: '62%CE' }, { value: '149', label: '65%CE' }, { value: '150', label: '68%CE' },, { value: '151', label: '71%CE' },
-            { value: '152', label: '74%CE' }, { value: '153', label: '77%CE' }, { value: '154', label: '80%CE' }, { value: '155', label: '83%CE' },, { value: '156', label: '86%CE' },
+            { value: '', label: '48kHz' }, { value: '128', label: '24kHz' }, { value: '192', label: '96kHz' }
+        ]
+    },
+    {
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escPWMFrequency',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 191 && settings.PPM_MAX_THROTTLE < 224),
+        options: [
+            { value: '', label: '96kHz' }, { value: '128', label: '24kHz' }, { value: '160', label: '48kHz' }
+        ]
+    },
+    {
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escCe',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 127 && settings.PPM_MAX_THROTTLE < 160),
+        options: [
+            { value: '128', label: 'Async-PWM' }, { value: '129', label: '3%CE' }, { value: '130', label: '6%CE' }, { value: '131', label: '9%CE' },
+            { value: '132', label: '12%CE' }, { value: '133', label: '15%CE' }, { value: '134', label: '18%CE' }, { value: '135', label: '21%CE' }, { value: '136', label: '24%CE' },
+            { value: '137', label: '27%CE' }, { value: '138', label: '30%CE' }, { value: '139', label: '33%CE' }, { value: '140', label: '37%CE' }, { value: '141', label: '40%CE' },
+            { value: '142', label: '44%CE' }, { value: '143', label: '47%CE' }, { value: '144', label: '50%CE' }, { value: '145', label: '53%CE' }, { value: '146', label: '56%CE' },
+            { value: '147', label: '59%CE' }, { value: '148', label: '62%CE' }, { value: '149', label: '65%CE' }, { value: '150', label: '68%CE' }, { value: '151', label: '71%CE' },
+            { value: '152', label: '74%CE' }, { value: '153', label: '77%CE' }, { value: '154', label: '80%CE' }, { value: '155', label: '83%CE' }, { value: '156', label: '86%CE' },
             { value: '157', label: '90%CE' }, { value: '158', label: '95%CE' }, { value: '159', label: '100%CE' }
         ]
     },
     {
-        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escSync48khzPWMFrequency',
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escCe',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 159 && settings.PPM_MAX_THROTTLE < 192),
         options: [
-            { value: '', label: 'OFF' }, { value: '161', label: '3%CE' }, { value: '162', label: '6%CE' }, { value: '163', label: '9%CE' },
-            { value: '164', label: '12%CE' }, { value: '165', label: '15%CE' }, { value: '166', label: '18%CE' }, { value: '167', label: '21%CE' },, { value: '168', label: '24%CE' },
-            { value: '169', label: '27%CE' }, { value: '170', label: '30%CE' }, { value: '171', label: '33%CE' }, { value: '172', label: '37%CE' },, { value: '173', label: '40%CE' },
-            { value: '174', label: '44%CE' }, { value: '175', label: '47%CE' }, { value: '176', label: '50%CE' }, { value: '177', label: '53%CE' },, { value: '178', label: '56%CE' },
-            { value: '179', label: '59%CE' }, { value: '180', label: '62%CE' }, { value: '181', label: '65%CE' }, { value: '182', label: '68%CE' },, { value: '183', label: '71%CE' },
-            { value: '184', label: '74%CE' }, { value: '185', label: '77%CE' }, { value: '186', label: '80%CE' }, { value: '187', label: '83%CE' },, { value: '188', label: '86%CE' },
+            { value: '160', label: 'Async-PWM' }, { value: '161', label: '3%CE' }, { value: '162', label: '6%CE' }, { value: '163', label: '9%CE' },
+            { value: '164', label: '12%CE' }, { value: '165', label: '15%CE' }, { value: '166', label: '18%CE' }, { value: '167', label: '21%CE' }, { value: '168', label: '24%CE' },
+            { value: '169', label: '27%CE' }, { value: '170', label: '30%CE' }, { value: '171', label: '33%CE' }, { value: '172', label: '37%CE' }, { value: '173', label: '40%CE' },
+            { value: '174', label: '44%CE' }, { value: '175', label: '47%CE' }, { value: '176', label: '50%CE' }, { value: '177', label: '53%CE' }, { value: '178', label: '56%CE' },
+            { value: '179', label: '59%CE' }, { value: '180', label: '62%CE' }, { value: '181', label: '65%CE' }, { value: '182', label: '68%CE' }, { value: '183', label: '71%CE' },
+            { value: '184', label: '74%CE' }, { value: '185', label: '77%CE' }, { value: '186', label: '80%CE' }, { value: '187', label: '83%CE' }, { value: '188', label: '86%CE' },
             { value: '189', label: '90%CE' }, { value: '190', label: '95%CE' }, { value: '191', label: '100%CE' }
         ]
     },
     {
-        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escSync96khzPWMFrequency',
+        name: 'PPM_MAX_THROTTLE', type: 'enum', label: 'escCe',
+        visibleIf: settings => (settings.PPM_MAX_THROTTLE > 191 && settings.PPM_MAX_THROTTLE < 224),
         options: [
-            { value: '', label: 'OFF' }, { value: '193', label: '3%CE' }, { value: '194', label: '6%CE' }, { value: '195', label: '9%CE' },
+            { value: '192', label: 'Async-PWM' }, { value: '193', label: '3%CE' }, { value: '194', label: '6%CE' }, { value: '195', label: '9%CE' },
             { value: '196', label: '12%CE' }, { value: '197', label: '15%CE' }, { value: '198', label: '18%CE' }, { value: '199', label: '21%CE' },, { value: '200', label: '24%CE' },
             { value: '201', label: '27%CE' }, { value: '202', label: '30%CE' }, { value: '203', label: '33%CE' }, { value: '204', label: '37%CE' },, { value: '205', label: '40%CE' },
             { value: '206', label: '44%CE' }, { value: '207', label: '47%CE' }, { value: '208', label: '50%CE' }, { value: '209', label: '53%CE' },, { value: '210', label: '56%CE' },
@@ -666,14 +702,14 @@ var BLHELI_S_INDIVIDUAL_SETTINGS = [
     {
         name: 'PPM_MIN_THROTTLE', type: 'enum', label: 'escSyncEscFFBrake',
         options: [
-            { value: '37', label: 'OFF' }, { value: '20', label: 'Low/Normal-Brake(25%)' }, { value: '21', label: 'Low/Normal-Brake(50%)' }, { value: '22', label: 'Low/Normal-Brake(75%)' },
-            { value: '23', label: 'Low/Normal-Brake(100%)' }, { value: '24', label: 'Low/Double-Brake(25%)' }, { value: '25', label: 'Low/Double-Brake(50%)' }, { value: '26', label: 'Low/Double-Brake(75%)' },
-            { value: '27', label: 'Low/Double-Brake(100%)' }, { value: '30', label: 'Medium/Normal-Brake(25%)' }, { value: '31', label: 'Medium/Normal-Brake(50%)' }, { value: '32', label: 'Medium/Normal-Brake(75%)' },
-            { value: '33', label: 'Medium/Normal-Brake(100%)' }, { value: '34', label: 'Medium/Double-Brake(50%)' }, { value: '35', label: 'Medium/Double-Brake(75%)' }, { value: '36', label: 'Medium/Double-Brake(100%)' },
-            { value: '40', label: 'Medium-High/Normal-Brake(25%)' }, { value: '41', label: 'Medium-High/Normal-Brake(50%)' }, { value: '42', label: 'Medium-High/Normal-Brake(75%)' }, { value: '43', label: 'Medium-High/Normal-Brake(100%)' },
-            { value: '44', label: 'Medium-High/Double-Brake(25%)' }, { value: '45', label: 'Medium-High/Double-Brake(50%)' }, { value: '46', label: 'Medium-High/Double-Brake(75%)' }, { value: '47', label: 'Medium-High/Double-Brake(100%)' },
-            { value: '50', label: 'High/Normal-Brake(25%)' }, { value: '51', label: 'High/Normal-Brake(50%)' }, { value: '52', label: 'High/Normal-Brake(75%)' }, { value: '53', label: 'High/Normal-Brake(100%)' },
-            { value: '54', label: 'High/Double-Brake(25%)' }, { value: '55', label: 'High/Double-Brake(50%)' }, { value: '56', label: 'High/Double-Brake(75%)' }, { value: '57', label: 'High/Double-Brake(100%)' }
+            { value: '37', label: 'OFF' }, { value: '20', label: 'Low/Normal(25%)' }, { value: '21', label: 'Low/Normal(50%)' }, { value: '22', label: 'Low/Normal(75%)' },
+            { value: '23', label: 'Low/Normal(100%)' }, { value: '24', label: 'Low/Double(25%)' }, { value: '25', label: 'Low/Double(50%)' }, { value: '26', label: 'Low/Double(75%)' },
+            { value: '27', label: 'Low/Double(100%)' }, { value: '30', label: 'Medium/Normal(25%)' }, { value: '31', label: 'Medium/Normal(50%)' }, { value: '32', label: 'Medium/Normal(75%)' },
+            { value: '33', label: 'Medium/Normal(100%)' }, { value: '34', label: 'Medium/Double(25%)' }, { value: '35', label: 'Medium/Double(50%)' }, { value: '36', label: 'Medium/Double(75%)' },
+            { value: '40', label: 'Medium-High/Normal(25%)' }, { value: '41', label: 'Medium-High/Normal(50%)' }, { value: '42', label: 'Medium-High/Normal(75%)' }, { value: '43', label: 'Medium-High/Normal(100%)' },
+            { value: '44', label: 'Medium-High/Double(25%)' }, { value: '45', label: 'Medium-High/Double(50%)' }, { value: '46', label: 'Medium-High/Double(75%)' }, { value: '47', label: 'Medium-High/Double(100%)' },
+            { value: '50', label: 'High/Normal(25%)' }, { value: '51', label: 'High/Normal(50%)' }, { value: '52', label: 'High/Normal(75%)' }, { value: '53', label: 'High/Normal(100%)' },
+            { value: '54', label: 'High/Double(25%)' }, { value: '55', label: 'High/Double(50%)' }, { value: '56', label: 'High/Double(75%)' }, { value: '57', label: 'High/Double(100%)' }
         ]
     }
 ];

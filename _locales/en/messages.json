@@ -163,20 +163,14 @@
     "escPPMCenterThrottle": {
         "message": "PPM Center Throttle"
     },
-    "escAsyncPWMFrequency": {
-        "message": "Async-PWM Frecuency"
+    "escPWMFrequency": {
+        "message": "PWM Frequency"
     },
-    "escSync24khzPWMFrequency": {
-        "message": "24kHz Sync-PWM + CE(Commutation Enhancement)"
-    },
-    "escSync48khzPWMFrequency": {
-        "message": "48kHz Sync-PWM + CE(Commutation Enhancement)"
-    },
-    "escSync96khzPWMFrequency": {
-        "message": "96kHz Sync-PWM + CE(Commutation Enhancement)"
+    "escCe": {
+        "message": "CE(Commutation Enhancement)"
     },
     "escSyncEscFfBrake": {
-        "message": "ESC Acceleration/Brake"
+        "message": "ESC FF(Acceleration/Brake)"
     },
     "escProgrammingByTX": {
         "message": "Programming by TX"
