@@ -167,10 +167,10 @@
         "message": "PWM Frequency"
     },
     "escCe": {
-        "message": "CE(Commutation Enhancement)"
+        "message": "CE (Commutation Enhancement)"
     },
     "escSyncEscFfBrake": {
-        "message": "ESC FF(Acceleration/Brake)"
+        "message": "ESC FF (Acceleration/Brake)"
     },
     "escProgrammingByTX": {
         "message": "Programming by TX"

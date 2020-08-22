@@ -81,7 +81,7 @@ var Configurator = React.createClass({
             canRead: true,
             canWrite: availableSettings.length > 0,
             canFlash: availableSettings.length > 0 && canFlash,
-            canResetDefaults: canResetDefaults
+            canResetDefaults: canResetDefaults,
         });
 
         $('a.connect').removeClass('disabled');
@@ -303,9 +303,8 @@ var Configurator = React.createClass({
                 newSettings.push({})
                 return;
             }
-
             const defaultsPWM = BLHELI_S_PWM[settings.LAYOUT_REVISION];
-            if (defaultsPWM) {
+            if ((settings.PPM_MAX_THROTTLE === 208 || settings.PPM_MAX_THROTTLE > 223) && defaultsPWM) {
                 for (var settingName in defaultsPWM) {
                     if (defaultsPWM.hasOwnProperty(settingName)) {
                         settings[settingName] = defaultsPWM[settingName];
@@ -348,7 +347,6 @@ var Configurator = React.createClass({
         }
         // migrate settings from previous version if asked to
         const newSettings = blheliSettingsObject(settingsArray);
-
         // ensure mode match
         if (newSettings.MODE === escSettings.MODE) {
             // find intersection between newSettings and escSettings with respect to their versions
@@ -363,7 +361,8 @@ var Configurator = React.createClass({
             allSettings[escIndex] = newSettings;
             self.onUserInput(allSettings);
 
-            this.resetPWMFrecuency(escIndex);
+            this.resetPWMFrecuency();
+
             GUI.log(chrome.i18n.getMessage('writeSetupStarted'));
 
             try {
