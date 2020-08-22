@@ -126,7 +126,7 @@
 }
 
 .tab-esc .not-in-sync::before {
-    content: '*';
+    content: 'CAUTION:ESC ARE NOT IN SYNC, CONFIGURE THIS VALUE ';
     color: red;
     font-weight: bold;
 }
